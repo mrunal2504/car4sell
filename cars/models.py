@@ -94,7 +94,7 @@ class Car(models.Model):
         ('8', '8'),
         ('9','9'),
         ('10', '10'),
-        ('more', 'more'),
+        ('More then 10', 'More then 10'),
     )
 
     transmission_type=(
@@ -116,6 +116,7 @@ class Car(models.Model):
         ('Jeep','Jeep'),
         ('MotorHome','MotorHome'),
     )
+
     no_of_owners=(
         ('1','1'),
         ('2', '2'),
@@ -147,7 +148,7 @@ class Car(models.Model):
     interior = models.CharField(max_length=100)
     kilometers = models.IntegerField()
     doors = models.CharField(choices=door_choices, max_length=100)
-    passengers = models.IntegerField(choices=passengers_type, max_length=100)
+    passengers = models.IntegerField(choices=passengers_type)
     vin_no = models.CharField(max_length=100)
     milage = models.IntegerField()
     fuel_type = models.CharField(choices=fuel_typ, max_length=100)

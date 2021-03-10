@@ -122,6 +122,7 @@ class Car(models.Model):
         ('3', '3'),
         ('4', '4'),
         ('5', '5'),
+        ('more then 5','more then 5'),
     )
 
 

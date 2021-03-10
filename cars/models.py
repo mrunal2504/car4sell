@@ -105,6 +105,25 @@ class Car(models.Model):
         ('DCT','Dual clutch transmissions'),
     )
 
+    body_style=(
+        ('Hatchback','Hatchback'),
+        ('Sedan','Sedan'),
+        ('MUV','MUV'),
+        ('SUV','SUV'),
+        ('Coupe','Coupe'),
+        ('VAN','VAN'),
+        ('Wagon','Wagon'),
+        ('Jeep','Jeep'),
+        ('MotorHome','MotorHome'),
+    )
+    no_of_owners=(
+        ('1','1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    )
+
 
     car_title = models.CharField(max_length=255)
     state = models.CharField(choices=state_choice, max_length=100)
@@ -121,12 +140,12 @@ class Car(models.Model):
     car_photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     car_photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     features = MultiSelectField(choices=features_choices)
-    body_style = models.CharField(max_length=100)
+    body_style = models.CharField(choices=body_style,max_length=100)
     engine = models.CharField(max_length=100)
     transmission = models.CharField(choices=transmission_type,max_length=100)
     interior = models.CharField(max_length=100)
     kilometers = models.IntegerField()
-    doors = models.CharField(choices=door_choices, max_length=10)
+    doors = models.CharField(choices=door_choices, max_length=100)
     passengers = models.IntegerField(choices=passengers_type)
     vin_no = models.CharField(max_length=100)
     milage = models.IntegerField()
